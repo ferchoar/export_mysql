@@ -2,10 +2,53 @@
 # Extract MySQL
 Extrae datos de una base de datos MySQL/MariaDB
 
-##  (Opcional) Build (para generar un ejecutable)
+
+##  (Opcional) Build para generar un ejecutable
 Se genera un archivo ejecutable (para el sistema operativo donde se ejecute el comando) en el directorio "dist":
 ```
 c:\> pyinstaller --onefile extract_mysql.py
+```
+Si se distribuye el ejecutable no se necesita el entorno python para ejecutar.
+
+## Instalación (desde git)
+Clonar el repositorio
+```
+$ git clone git@github.com:ferchoar/export_mysql.git
+```
+
+Recomendamos usar virtualenv
+```
+$ cd export_mysql
+$ python3 -m venv ./venv
+$ . venv/bin/activate
+(venv) $
+```
+Instalar dependencias
+```
+(venv) $ pip install -r requirements.txt
+Collecting mysql-connector-python==8.0.30 (from -r requirements.txt (line 1))
+  Using cached https://files.pythonhosted.org/packages/94/42/5f1c4974d346ff015af67a5b1b1818487caaee60659aefd7263af3e2e52a/mysql_connector_python-8.0.30-py2.py3-none-any.whl
+Collecting protobuf==3.19.4 (from -r requirements.txt (line 2))
+  Using cached https://files.pythonhosted.org/packages/c6/1c/f18d97fc479b4fb6f72bbb0e41188575362e3bbd31014cf294ef0fdec8bf/protobuf-3.19.4-py2.py3-none-any.whl
+(...)
+Collecting typing-extensions>=3.6.4; python_version < "3.8" (from importlib-metadata; python_version < "3.8"->click~=8.0.4->-r requirements.txt (line 5))
+  Using cached https://files.pythonhosted.org/packages/45/6b/44f7f8f1e110027cf88956b59f2fad776cca7e1704396d043f89effd3a0e/typing_extensions-4.1.1-py3-none-any.whl
+Installing collected packages: protobuf, mysql-connector-python, pytz, numpy, six, python-dateutil, pandas, zipp, importlib-resources, tqdm, typing-extensions, importlib-metadata, click
+Successfully installed click-8.0.4 importlib-metadata-4.8.3 importlib-resources-5.4.0 mysql-connector-python-8.0.30 numpy-1.19.5 pandas-1.1.5 protobuf-3.19.4 python-dateutil-2.8.2 pytz-2022.2.1 six-1.16.0 tqdm-4.64.0 typing-extensions-4.1.1 zipp-3.6.0
+(venv) $ 
+```
+Test
+```
+(venv) $ python extract_mysql.py --help
+Usage: extract_mysql.py [OPTIONS]
+
+Options:
+  -d, --db_config_filename TEXT   Configuración de base de datos
+  -e, --extract_config_filename TEXT
+                                  Configuración de extracción
+  --help                          Show this message and exit.
+(venv) $
+
 ```
 
 ## Configuración
