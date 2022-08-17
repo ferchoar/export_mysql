@@ -1,0 +1,17 @@
+[
+{
+    "tabla": "ventas"
+}, {
+    "tabla": "productos",
+    "fields": ["id", "nombre", "categoria"],
+    "file": "productos_completo.csv"
+}, {
+    "tabla": "usuarios",
+    "fields": ["*"],
+    "file": "usuarios.csv"
+}, {
+    "tabla": "descuentos",
+    "query": "select dd.* from discount_data dd join discount_day dy on (dd.id_discount = dy.id_discount) where discount_date > '2022-01-01'",
+    "file": "listado_de_descuentos.csv"
+}
+]
