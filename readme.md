@@ -2,13 +2,10 @@
 # Extract MySQL
 Extrae datos de una base de datos MySQL/MariaDB
 
+## Requerimientos
+* Python 3.10
 
-##  (Opcional) Build para generar un ejecutable
-Se genera un archivo ejecutable (para el sistema operativo donde se ejecute el comando) en el directorio "dist":
-```
-c:\> pyinstaller --onefile extract_mysql.py
-```
-Si se distribuye el ejecutable no se necesita el entorno python para ejecutar.
+NOTA: Probado en versiones anteriores de python (3.6 en adelante), pero hay que cambiar las versiones de los requerimientos
 
 ## Instalación (desde git)
 Clonar el repositorio
@@ -115,3 +112,31 @@ Mode                 LastWriteTime         Length Name
 -a----         12/8/2022     17:36          18859 usuarios.csv
 -a----         12/8/2022     17:36          14606 listado_de_descuentos.csv
 ```
+
+
+##  (Opcional) Build para generar un ejecutable
+Se genera un archivo ejecutable (para el sistema operativo donde se ejecute el comando) en el directorio "dist":
+```
+c:\export_test> pyinstaller --onefile extract_mysql.py
+1217 INFO: PyInstaller: 5.3
+1217 INFO: Python: 3.10.0
+1249 INFO: Platform: Windows-10-10.0.19044-SP0
+(...)
+80216 INFO: Updating resource type 24 name 1 language 0
+80223 INFO: Appending PKG archive to EXE
+80314 INFO: Fixing EXE headers
+81361 INFO: Building EXE from EXE-00.toc completed successfully.
+c:\export_test> dir *.exe
+
+
+    Directorio: C:\export_test
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         17/8/2022     10:38       32452114 extract_mysql.exe
+
+
+c:\export_test> 
+```
+Si se distribuye el ejecutable no se necesita el entorno python para ejecutar.
