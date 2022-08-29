@@ -98,7 +98,7 @@ Ejemplo:
 ## Ejecución
 ```
 c:\export_test> python extract_mysql.py     
-Tabla prueba_query_json_plano: 100%|██████████████████| 12/12 [00:06<00:00,  1.91it/s]
+Tabla descuentos: 100%|██████████████████| 12/12 [00:06<00:00,  1.91it/s]
 c:\export_test> dir *.csv
 
 
