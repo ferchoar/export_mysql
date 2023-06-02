@@ -11,6 +11,7 @@ from typing import Dict
 def conn_db(config):
     mydb = mysql.connector.connect(
         host=config["db_host"],
+        port=config["db_port"],
         user=config["db_user"],
         database=config["db_db"],
         password=config["db_pass"]
